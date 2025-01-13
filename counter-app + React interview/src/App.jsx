@@ -7,6 +7,8 @@ function App() {
   // Using react
   const [counter , setCounter] = useState(0)
 
+  // let prevCounter
+
   //Through javscript
   // let counter = 1
   // const addValue = () =>{
@@ -15,14 +17,26 @@ function App() {
   //   add.innerHTML = `Increase Value:- ${counter}`
   // }
 
-  const addValue = ()=>{
-    if (counter < 10) {
-      setCounter(counter+1)
-    }
-    else{
-      alert('Counter Reached Limit')
+  // const addValue = ()=>{
+  //   if (counter < 10) {
+  //     setCounter(counter+1)
+  //   }
+  //   else{
+  //     alert('Counter Reached Limit')
 
-    }  
+  //   }  
+  // }
+
+  //React interview Question
+  const addValue = ()=>{
+    setCounter(counter+1)//nothing wllbe changed only 1 will be plus
+    setCounter(counter+1)//nothing wllbe changed only 1 will be plus
+    setCounter(counter+1)//nothing wllbe changed only 1 will be plus
+    //if we want above 2-3 plus we need to do this
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter =>  prevCounter + 1)
+
   }
 
   const decreaseVal = () => {
